@@ -22,7 +22,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f dockerfile -t ${{secrets.DOCKERHUB_USERNAME}}/demo-devops:latest
+            docker build . -f Dockerfile -t ${{secrets.DOCKERHUB_USERNAME}}/demo-devops:latest
         - name: push the docker image
           id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/demo-devops:latest
