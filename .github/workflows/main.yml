@@ -15,6 +15,8 @@ jobs:
             username: ${{secrets.DOCKERHUB_USERNAME}}
             password: ${{secrets.DOCKERHUB_PASSWORD}}
           run: |
+            echo $username
+            echo $password
             docker login -u $username -p $password 
         - name: build the docker image
           id: build-docker-image
@@ -24,4 +26,3 @@ jobs:
         - name: push the docker image
           id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/demo-devops:latest
-          
