@@ -17,7 +17,7 @@ jobs:
           run: |
             echo $username
             echo $password
-            docker login -u $username -p $password 
+            docker login -u gh204688 -p Fourteen19!
         - name: build the docker image
           id: build-docker-image
           run: |
